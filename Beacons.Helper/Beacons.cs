@@ -31,7 +31,7 @@ namespace Beacons
     }
     public static class iBeaconExtensions
     {
-        public static void SetiBeaconAdvertisement(this BluetoothLEAdvertisement Advertisment, iBeaconData data)
+        public static void iBeaconSetAdvertisement(this BluetoothLEAdvertisement Advertisment, iBeaconData data)
         {
             BluetoothLEManufacturerData manufacturerData = new BluetoothLEManufacturerData();
 
@@ -65,7 +65,7 @@ namespace Beacons
             Advertisment.ManufacturerData.Add(manufacturerData);
         }
 
-        public static iBeaconData ParseiBeaconAdvertisement(this BluetoothLEAdvertisement Advertisment,short RawSignalStrengthInDBm)
+        public static iBeaconData iBeaconParseAdvertisement(this BluetoothLEAdvertisement Advertisment,short RawSignalStrengthInDBm)
         {
             iBeaconData beacon = null;
             foreach(var adv in Advertisment.ManufacturerData)

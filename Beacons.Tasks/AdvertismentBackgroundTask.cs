@@ -48,7 +48,7 @@ namespace Beacons.Tasks
                 List<iBeaconData> beacons = new List<iBeaconData>();
                 foreach (var adv in advertisements)
                 {
-                    var beacon = adv.Advertisement.ParseiBeaconAdvertisement(adv.RawSignalStrengthInDBm);
+                    var beacon = adv.Advertisement.iBeaconParseAdvertisement(adv.RawSignalStrengthInDBm);
                     if (beacon != null)
                         beacons.Add(beacon);
                 }

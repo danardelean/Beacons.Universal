@@ -163,7 +163,7 @@ namespace Beacons.Universal.Background
                     // Create and initialize a new trigger to configure it.
                     trigger = new BluetoothLEAdvertisementWatcherTrigger();
                     // Add the manufacturer data to the advertisement filter on the trigger:
-                    trigger.AdvertisementFilter.Advertisement.SetiBeaconAdvertisement(new iBeaconData());
+                    trigger.AdvertisementFilter.Advertisement.iBeaconSetAdvertisement(new iBeaconData());
                     // By default, the sampling interval is set to be disabled, or the maximum sampling interval supported.
                     // The sampling interval set to MaxSamplingInterval indicates that the event will only trigger once after it comes into range.
                     // Here, set the sampling period to 1 second, which is the minimum supported for background.

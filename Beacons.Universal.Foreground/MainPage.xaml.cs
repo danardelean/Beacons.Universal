@@ -46,7 +46,7 @@ namespace Beacons.Universal.Foreground
             watcher = new BluetoothLEAdvertisementWatcher();
 
             // Monitor all iBeacons advertisment
-            watcher.AdvertisementFilter.Advertisement.SetiBeaconAdvertisement(new iBeaconData());
+            watcher.AdvertisementFilter.Advertisement.iBeaconSetAdvertisement(new iBeaconData());
 
             //// Monitor all iBeacons with UUID
             //watcher.AdvertisementFilter.Advertisement.SetiBeaconAdvertismentManufacturerData(
@@ -168,7 +168,7 @@ namespace Beacons.Universal.Foreground
             string localName = eventArgs.Advertisement.LocalName;
 
             // Get iBeacon specific data
-            var beaconData = eventArgs.Advertisement.ParseiBeaconAdvertisement(eventArgs.RawSignalStrengthInDBm);
+            var beaconData = eventArgs.Advertisement.iBeaconParseAdvertisement(eventArgs.RawSignalStrengthInDBm);
 
 
             if (beaconData == null)
