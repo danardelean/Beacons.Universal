@@ -1,0 +1,63 @@
+﻿<Page
+    x:Class="Beacons.Universal.Foreground.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Beacons.Universal"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <Page.Resources>
+        <DataTemplate  x:Key="HeaderTemplate" >
+            <Grid Height="36" Background="DarkGray">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="300"/>
+                    <ColumnDefinition Width="85"/>
+                    <ColumnDefinition Width="85"/>
+                    <ColumnDefinition Width="85"/>
+                    <ColumnDefinition Width="85"/>
+                    <ColumnDefinition Width="85"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock TextWrapping="NoWrap" Text="UUID" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"  />
+                <TextBlock TextWrapping="NoWrap" Text="Major" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"  />
+                <TextBlock TextWrapping="NoWrap" Text="Minor" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center"  />
+                <TextBlock TextWrapping="NoWrap" Text="Tx Power" Grid.Column="3" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                <TextBlock TextWrapping="NoWrap" Text="Rssi"  Grid.Column="4" VerticalAlignment="Center" HorizontalAlignment="Center"   />
+                <TextBlock TextWrapping="NoWrap" Text="Distance"  Grid.Column="5" VerticalAlignment="Center" HorizontalAlignment="Center" />
+            </Grid>
+        </DataTemplate>
+    </Page.Resources>
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <ListView SelectionMode="None" ItemsSource="{Binding}" Padding="0"
+                      HorizontalAlignment="Center" 
+                      VerticalAlignment="Center" 
+                      HeaderTemplate="{StaticResource HeaderTemplate}">
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                    <Setter Property="Padding" Value="0" />
+                    <Setter Property="Margin" Value="0" />
+                </Style>
+            </ListView.ItemContainerStyle>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Height="50" HorizontalAlignment="Stretch">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="300"/>
+                            <ColumnDefinition Width="85"/>
+                            <ColumnDefinition Width="85"/>
+                            <ColumnDefinition Width="85"/>
+                            <ColumnDefinition Width="85"/>
+                            <ColumnDefinition Width="85"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock HorizontalAlignment="Center" TextWrapping="NoWrap" Text="{Binding UUID}" Grid.Column="0" VerticalAlignment="Center" />
+                        <TextBlock HorizontalAlignment="Center"  TextWrapping="NoWrap" Text="{Binding Major}" Grid.Column="1" VerticalAlignment="Center"   />
+                        <TextBlock HorizontalAlignment="Center"  TextWrapping="NoWrap" Text="{Binding Minor}" Grid.Column="2" VerticalAlignment="Center"   />
+                        <TextBlock HorizontalAlignment="Center"  TextWrapping="NoWrap" Text="{Binding TxPower}" Grid.Column="3" VerticalAlignment="Center"  />
+                        <TextBlock HorizontalAlignment="Center"  TextWrapping="NoWrap" Text="{Binding Rssi}"  Grid.Column="4" VerticalAlignment="Center"   />
+                        <TextBlock HorizontalAlignment="Center" TextWrapping="NoWrap" Text="{Binding Distance}"  Grid.Column="5" VerticalAlignment="Center"  />
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</Page>
